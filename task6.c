@@ -1,17 +1,16 @@
 #include <stdio.h>
-#define SIZE 5
 
-void enter(int* arr)
+void scan(int* arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		scanf("%d", &arr[i]);
 	}
 }
 
-void compare(int* arr1, int* arr2)
+void compare_arrays(int* arr1, int* arr2, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		if (arr1[i] != arr2[i])
 		{
@@ -25,10 +24,11 @@ void compare(int* arr1, int* arr2)
 
 int main()
 {
-	int arr1[SIZE] = { 0 };
-	int arr2[SIZE] = { 0 };
-	enter(arr1);
-	enter(arr2);
-	compare(arr1, arr2);
+	const int size = 5;
+	int arr1[size] = { 0 };
+	int arr2[size] = { 0 };
+	scan(arr1, size);
+	scan(arr2, size);
+	compare_arrays(arr1, arr2, size);
 	return 0;
 }

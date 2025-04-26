@@ -1,17 +1,16 @@
 #include <stdio.h>
-#define SIZE 7
 
-void enter(char* arr)
+void scan(char* arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		scanf(" %c", &arr[i]);
 	}
 }
 
-void Upp(char* arr)
+void low_to_upp(char* arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		if (arr[i] >= 'a' && arr[i] <= 'z')
 		{
@@ -20,9 +19,9 @@ void Upp(char* arr)
 	}
 }
 
-void print(char* arr)
+void print(const char* arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		printf("%c ", arr[i]);
 	}
@@ -30,9 +29,10 @@ void print(char* arr)
 
 int main()
 {
-	char arr[SIZE] = { 0 };
-	enter(arr);
-	Upp(arr);
-	print(arr);
+	const int size = 5;
+	char arr[size] = { 0 };
+	scan(arr, size);
+	low_to_upp(arr, size);
+	print(arr, size);
 	return 0;
 }

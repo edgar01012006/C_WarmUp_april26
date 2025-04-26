@@ -1,17 +1,16 @@
 #include <stdio.h>
-#define SIZE 5
 
-void enter(int* arr)
+void scan(int* arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		scanf("%d", &arr[i]);
 	}
 }
 
-void target_found(int* arr, int target)
+void find_target(const int* arr, const int target, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		if (arr[i] == target)
 		{
@@ -21,16 +20,18 @@ void target_found(int* arr, int target)
 	}
 
 	printf("NO\n");
+	return;
 }
 
 int main()
 {
 	int target = 0;
+	printf("enter target\n");
 	scanf("%d", &target);
-
-	int arr[SIZE] = { 0 };
-	enter(arr);
-	target_found(arr, target);
+	const int size = 5;
+	int arr[size] = { 0 };
+	scan(arr, size);
+	find_target(arr, target, size);
 
 	return 0;
 }

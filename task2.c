@@ -1,31 +1,31 @@
 #include <stdio.h>
-#define SIZE 5
 
-void enter(int *arr)
+void scan(int *arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		scanf("%d", &arr[i]);
 	}
 }
 
 
-int mid(int* arr)
+int average(const int* arr, const int size)
 {
-	int mid = 0;
-	for (int i = 0; i < SIZE; ++i)
+	int av = 0;
+	for (int i = 0; i < size; ++i)
 	{
-		mid += arr[i];
+		av += arr[i];
 	}
 
-	return mid / SIZE;
+	return av / size;
 }
 
 int main()
 {
-	int arr[SIZE] = { 0 };
-	enter(arr);
-	printf("mid = %d", mid(arr));
+	const int size = 5;
+	int arr[size] = { 0 };
+	scan(arr, size);
+	printf("average = %d\n", average(arr, size));
 
 	return 0;
 

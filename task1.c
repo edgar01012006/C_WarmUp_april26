@@ -1,17 +1,16 @@
 #include <stdio.h>
-#define SIZE 5
 
-void enter(int* arr)
+void scan(int* arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		scanf("%d", &arr[i]);
 	}
 }
 
-void printmul(int* arr1, int* arr2)
+void print_mul_same_index(const int* arr1, const int* arr2, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		printf("mul = %d\n", arr1[i] * arr2[i]);
 	}
@@ -19,11 +18,12 @@ void printmul(int* arr1, int* arr2)
 
 int main()
 {
-	int arr1[SIZE] = { 0 };
-	int arr2[SIZE] = { 0 };
-	enter(arr1);
-	enter(arr2);
-	printmul(arr1, arr2);
+	const int size = 5;
+	int arr1[size] = { 0 };
+	int arr2[size] = { 0 };
+	scan(arr1, size);
+	scan(arr2, size);
+	print_mul_same_index(arr1, arr2, size);
 
 	return 0;
 }

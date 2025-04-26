@@ -1,18 +1,17 @@
 #include <stdio.h>
-#define SIZE 3
 
-void enter(int* arr)
+void scan(int* arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		scanf("%d", &arr[i]);
 	}
 }
 
-void print_for(int* arr1, int* arr2)
+void print_arr(int* arr1, int* arr2, const int size)
 {
 	int flag = 0;
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		if (flag == 0)
 		{
@@ -22,7 +21,7 @@ void print_for(int* arr1, int* arr2)
 		{
 			printf("%d ", arr2[i]);
 		}
-		if (i == SIZE - 1 && flag == 0)
+		if (i == size - 1 && flag == 0)
 		{
 			flag = 1;
 			i = -1;
@@ -32,11 +31,12 @@ void print_for(int* arr1, int* arr2)
 
 int main()
 {
-	int arr1[SIZE] = { 0 };
-	int arr2[SIZE] = { 0 };
-	enter(arr1);
-	enter(arr2);
-	print_for(arr1, arr2);
+	const int size = 3;
+	int arr1[size] = { 0 };
+	int arr2[size] = { 0 };
+	scan(arr1, size);
+	scan(arr2, size);
+	print_arr(arr1, arr2, size);
 
 	return 0;
 }

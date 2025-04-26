@@ -1,19 +1,18 @@
 #include <stdio.h>
-#define SIZE 5
 
-void enter(char* arr)
+void scan(char* arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		scanf(" %c", &arr[i]);
 	}
 }
 
-void reverse(char* arr)
+void reverse_arr(char* arr, const int size)
 {
 	char swap = 0;
-	int j = SIZE - 1;
-	for (int i = 0; i < SIZE / 2; ++i, --j)
+	int j = size - 1;
+	for (int i = 0; i < size / 2; ++i, --j)
 	{
 		swap = arr[i];
 		arr[i] = arr[j];
@@ -21,9 +20,9 @@ void reverse(char* arr)
 	}
 }
 
-void print(char* arr)
+void print(const char* arr, const int size)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		printf("%c", arr[i]);
 	}
@@ -32,10 +31,11 @@ void print(char* arr)
 
 int main()
 {
-	char arr[SIZE] = { '\0' };
-	enter(arr);
-	print(arr);
-	reverse(arr);
-	print(arr);
+	const int size = 5;
+	char arr[size] = { '\0' };
+	scan(arr, size);
+	print(arr, size);
+	reverse_arr(arr, size);
+	print(arr, size);
 	return 0;
 }
